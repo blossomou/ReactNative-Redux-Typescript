@@ -10,7 +10,7 @@ interface TextFieldProps{
 }
 
 const TextField: React.FC<TextFieldProps> = ({placeholder, isSecure = false, onTextChange}) => {
-    const [isPassword, setIsPassword] = useState(false)
+    const [isPassword, setIsPassword] = useState(false);
     
     useEffect(() => {
       setIsPassword(isSecure)
@@ -20,6 +20,7 @@ const TextField: React.FC<TextFieldProps> = ({placeholder, isSecure = false, onT
         <View style={styles.container}>
             <TextInput style={styles.textField} placeholder={placeholder} 
                 secureTextEntry={isSecure} onChangeText={(text) => onTextChange(text)} />
+            
             {isSecure && (<TouchableOpacity style={{justifyContent: 'center'}} onPress={() => setIsPassword(!isPassword)}>
                 <Image style={{width: 60, height: 30}} source={isSecure ? require('../images/show.png') : require('../images/hide.png') }/>
             </TouchableOpacity>)}
@@ -30,7 +31,7 @@ const TextField: React.FC<TextFieldProps> = ({placeholder, isSecure = false, onT
 export default TextField
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flexDirection: 'row',
         height: 50,
         borderRadius: 30,
@@ -38,13 +39,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         margin: 10,
-        paddingLeft: 10,
-        paddingRight: 10
+        paddingLeft: 20,
+        paddingRight: 10,
     },
     textField: {
         flex: 1,
         height: 50,
         fontSize: 20,
-        color: '#0000'
-    }
+        color: '#000',
+    },
 })

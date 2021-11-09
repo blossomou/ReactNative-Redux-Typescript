@@ -3,7 +3,7 @@ import { BASE_URL } from '../../utils'
 import { Dispatch } from "redux"
 import { UserAction, UserModel } from '../actions'
 
-export const onLogin = async(email: string, password: string) => {
+export const onLogin = (email: string, password: string) => {
     return async(dispatch: Dispatch<UserAction>) => {
 
         try {
