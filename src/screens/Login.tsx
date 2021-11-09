@@ -2,10 +2,26 @@ import React, {useState} from 'react'
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import Button from '../components/Button';
 import TextField from '../components/TextField';
+import {useDispatch, useSelector,} from 'react-redux'
+import{ApplicationState, onLogin} from '../redux'
 
 const Login = () => {
-const [email, setEmail] = useState('');
-const [password, setPassword] = useState('')
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('')
+
+    const dispatch = useDispatch();
+
+    const {user, error} = useSelector((state : ApplicationState) => state.user);
+
+    const {token} = user;
+    
+    console.log(token);
+
+    const onTapLogin = () =>{
+        dispatch(onLogin(email, password))
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.navigation}></View>
@@ -14,7 +30,7 @@ const [password, setPassword] = useState('')
                     <TextField placeholder='Email Id' onTextChange={setEmail}/>
                     <TextField placeholder='Password' onTextChange={setPassword} isSecure={true}/>
 
-                    <Button title="Login" onTap={() => console.log('working...')} />
+                    <Button title="Login" onTap={onTapLogin} />
 
                 </View>
                
