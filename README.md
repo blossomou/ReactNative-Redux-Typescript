@@ -1,4 +1,4 @@
-# React-Redux-Typescript
+# ReactNative-Redux-Typescript
 
 ## Purpose
 A tutorial I followed because I want to learn more about React Native with Expo, Redux and Typescript
@@ -13,4 +13,4 @@ https://www.youtube.com/watch?v=_-Lc8TnkkLQ
 ## Contribution
 Made with ❤️ by Blossom
 
-### ©️2021 React-Redux-Typescript
+### ©️2021 ReactNative-Redux-Typescript
